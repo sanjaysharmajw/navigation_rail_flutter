@@ -1,4 +1,4 @@
-library navigation_rail_flutter;
+library;
 
 export 'src/navigation_flutter.dart';
 

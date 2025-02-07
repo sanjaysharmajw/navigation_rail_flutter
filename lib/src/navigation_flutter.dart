@@ -19,6 +19,10 @@ class NavigationFlutter extends StatefulWidget {
   final String? logo;
   final bool? bottomLabelActive;
   final bool? railLabelActive;
+  final double? railIconSize;
+  final double? logoSize;
+
+  final double? railIconsSizeHeight,railIconsSizeWidth;
 
   const NavigationFlutter({super.key,
     this.navigationRailPadding=4,
@@ -36,7 +40,9 @@ class NavigationFlutter extends StatefulWidget {
     this.logo,
     this.bottomLabelActive=false,
     this.railLabelActive=false,
-    this.navigationRailColor=Colors.blueGrey});
+    this.navigationRailColor=Colors.blueGrey,
+    this.railIconsSizeHeight=30,
+    this.railIconsSizeWidth=30, this.railIconSize=6, this.logoSize=10});
 
   @override
   State<NavigationFlutter> createState() => _NavigationFlutterState();
@@ -45,6 +51,11 @@ class NavigationFlutter extends StatefulWidget {
 class _NavigationFlutterState extends State<NavigationFlutter> {
 
   int isSelected = 0;
+
+  double? get railIconsSizeHeight => widget.railIconsSizeHeight;
+  double? get railIconsSizeWidth => widget.railIconsSizeWidth;
+  double? get railIconSize => widget.railIconSize;
+  double? get logoSize => widget.logoSize;
 
   double? get navigationRailPad => widget.navigationRailPadding;
   double? get navigationRailWid => widget.navigationRailWidth;
@@ -55,15 +66,15 @@ class _NavigationFlutterState extends State<NavigationFlutter> {
   List<String> get railIcon => widget.railIcons;
   List<String>? get railLab => widget.railLabel;
   List<String>? get bottomLab => widget.bottomRailLabel;
-  List<Widget> get page=> widget.pages;
-  String? get companyLog=> widget.logo;
-  Color? get navigationRailColor=> widget.navigationRailColor;
+  List<Widget> get page => widget.pages;
+  String? get companyLog => widget.logo;
+  Color? get navigationRailColor => widget.navigationRailColor;
 
-  Color? get activeRailColors=> widget.activeColor;
-  Color? get inActiveRailColors=> widget.inActiveColor;
+  Color? get activeRailColors => widget.activeColor;
+  Color? get inActiveRailColors => widget.inActiveColor;
 
-  bool? get bottomLabelActive=> widget.bottomLabelActive;
-  bool? get railLabelActive=> widget.railLabelActive;
+  bool? get bottomLabelActive => widget.bottomLabelActive;
+  bool? get railLabelActive => widget.railLabelActive;
 
   @override
   Widget build(BuildContext context) {
@@ -85,7 +96,7 @@ class _NavigationFlutterState extends State<NavigationFlutter> {
                   padding: const EdgeInsets.all(5.0),
                   child: Column(
                     children: [
-                      Image.asset(companyLog!),
+                      Image.asset(companyLog!,scale: logoSize),
                       Expanded(
                         child: ListView.builder(
                           padding: const EdgeInsets.all(8),
@@ -102,17 +113,16 @@ class _NavigationFlutterState extends State<NavigationFlutter> {
                                 children: [
                                   const SizedBox(height: 10),
                                   Container(
-                                    height: 30,
-                                    width: 30,
+                                    height: railIconsSizeHeight,
+                                    width: railIconsSizeWidth,
                                     decoration: BoxDecoration(
                                       color: isSelected == index
                                           ? activeRailColors
                                           : inActiveRailColors,
-                                      borderRadius: const BorderRadius.all(
-                                          Radius.circular(5)),
+                                      borderRadius: const BorderRadius.all(Radius.circular(5)),
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsets.all(6.0),
+                                      padding:  EdgeInsets.all(railIconSize!),
                                       child: Image.asset(
                                         railIcon[index],
                                         color: isSelected == index
@@ -149,8 +159,8 @@ class _NavigationFlutterState extends State<NavigationFlutter> {
                             children: [
                               const SizedBox(height: 10),
                               SizedBox(
-                                height: 30,
-                                width: 30,
+                                height: railIconsSizeHeight,
+                                width: railIconsSizeWidth,
                                 child: Image.asset(
                                   bottomIcon[index],
                                 ),

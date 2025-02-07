@@ -1,11 +1,10 @@
-name: nvaigation_rail_flutter
-description: "A new Flutter project."
+name: navigation_rail_flutter
+description: "NavigationRail in Flutter provides a responsive, side navigation bar for large screens, enhancing usability and adaptive UI design."
 version: 0.0.1
 homepage: https://github.com/sanjaysharmajw/navigation_rail_flutter.git
-documentation: https://pub.dev/documentation/extensions_pro/latest/
 
 environment:
-  sdk: ^3.6.1
+  sdk: ^3.5.3
   flutter: ">=1.17.0"
 
 dependencies:
@@ -23,6 +22,7 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
 
+  uses-material-design: true
   # To add assets to your package, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
