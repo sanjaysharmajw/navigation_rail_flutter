@@ -21,8 +21,10 @@ class NavigationFlutter extends StatefulWidget {
   final bool? railLabelActive;
   final double? railIconSize;
   final double? logoSize;
+  final double? bottomIconsSize;
 
   final double? railIconsSizeHeight,railIconsSizeWidth;
+  final double? railBottomSizeHeight,railBottomSizeWidth;
 
   const NavigationFlutter({super.key,
     this.navigationRailPadding=4,
@@ -42,7 +44,8 @@ class NavigationFlutter extends StatefulWidget {
     this.railLabelActive=false,
     this.navigationRailColor=Colors.blueGrey,
     this.railIconsSizeHeight=30,
-    this.railIconsSizeWidth=30, this.railIconSize=6, this.logoSize=10});
+    this.railIconsSizeWidth=30, this.railIconSize=6, this.logoSize=10,
+    this.railBottomSizeHeight, this.railBottomSizeWidth, this.bottomIconsSize=18});
 
   @override
   State<NavigationFlutter> createState() => _NavigationFlutterState();
@@ -51,6 +54,10 @@ class NavigationFlutter extends StatefulWidget {
 class _NavigationFlutterState extends State<NavigationFlutter> {
 
   int isSelected = 0;
+
+  double? get railBottomSizeHeight => widget.railBottomSizeHeight;
+  double? get railBottomSizeWidth => widget.railBottomSizeWidth;
+  double? get bottomIconsSize => widget.bottomIconsSize;
 
   double? get railIconsSizeHeight => widget.railIconsSizeHeight;
   double? get railIconsSizeWidth => widget.railIconsSizeWidth;
@@ -162,6 +169,7 @@ class _NavigationFlutterState extends State<NavigationFlutter> {
                                 height: railIconsSizeHeight,
                                 width: railIconsSizeWidth,
                                 child: Image.asset(
+                                  scale: bottomIconsSize,
                                   bottomIcon[index],
                                 ),
                               ),
