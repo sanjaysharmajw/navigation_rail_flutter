@@ -1,7 +1,8 @@
 name: nvaigation_rail_flutter
 description: "A new Flutter project."
 version: 0.0.1
-homepage:
+homepage: https://github.com/sanjaysharmajw/navigation_rail_flutter.git
+documentation: https://pub.dev/documentation/extensions_pro/latest/
 
 environment:
   sdk: ^3.6.1
