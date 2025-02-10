@@ -11,7 +11,7 @@ A Navigation Rail is a compact, vertical navigation component introduced by Flut
 /// Define image or icons
 const logo="assets/photoshop.png";
 const profile="assets/user.png";
-const signOut="assets/logout.png";
+const signOut="assets/signout.png";
 const activeHouse="assets/active_house.png";
 const activeList="assets/active_list.png";
 

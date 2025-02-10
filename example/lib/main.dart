@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:navigation_rail_flutter/navigation_rail_flutter.dart';
 
-const logo="assets/photoshop.png";
+const logo = "assets/logo.png";
+const networkImage = "https://images.pexels.com/photos/27305813/pexels-photo-27305813/free-photo-of-a-woman-taking-a-photo-with-her-camera.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
 
-const profile="assets/user.png";
-const signOut="assets/logout.png";
-const activeHouse="assets/active_house.png";
-const activeList="assets/active_list.png";
+const profile = "assets/settings.png";
+//const signOut = "assets/signout.png";
+const activeHouse = "assets/active_house.png";
+const activeList = "assets/active_list.png";
+
+const inactiveColor = Color(0xFFE2F3F9);
+const activeColor = Color(0xFF005272);
 
 void main() {
   runApp(const MyApp());
@@ -44,14 +48,27 @@ class NavigationRailExample extends StatefulWidget {
 class _NavigationRailExampleState extends State<NavigationRailExample> {
 
 
-  final List<String> label = <String>['Home', 'List'];
   final List<String> bottomLabel = <String>['Profile', 'Logout'];
-  final List<String> bottomIcons = <String>[profile, signOut];
-  final List<String> icons = <String>[activeHouse, activeList];
+  final List<String> bottomIcons = <String>[profile, 'assets/logout.png'];
+
+  final List<String> railLabel = <String>['Home', 'List'];
+  final List<String> railIcons = <String>[activeHouse, activeList];
 
   final List<Widget> pages = [
     const Center(child: Text('Home', style: TextStyle(fontSize: 20))),
-    const Center(child: Text('List', style: TextStyle(fontSize: 20))),
+    Center(child: SizedBox(
+      width: 100,
+      height: 100,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(50), // Half of the width/height for a perfect circle
+        child: Image.network(
+          networkImage,
+          fit: BoxFit.cover, // Ensure image covers the space without distortion
+        ),
+      ),
+    )
+
+    ),
   ];
 
   @override
@@ -60,25 +77,29 @@ class _NavigationRailExampleState extends State<NavigationRailExample> {
       child: Scaffold(
         backgroundColor: Colors.white,
         body: NavigationFlutter(
-            railItemCount: label.length,
-            bottomItemCount: bottomLabel.length,
-            railIcons: icons,
-            pages: pages,
-            logo: logo,
-            logoSize: 2,
-            navigationRailRadius: 10,
-            railIconSize: 10,
-            railIconsSizeHeight: 40,
-            railIconsSizeWidth: 40,
-            navigationRailColor: Colors.grey.shade300,
-            railLabel: label,
-            bottomIcons: bottomIcons,
-            activeColor: Colors.orange,
-            inActiveColor: Colors.lightBlue.shade300),
+          railItemCount: railLabel.length,
+          railIcons: railIcons,
+          pages: pages,
+          logo: logo,
+          profileImage: networkImage,
+          navigationRailPadding: 10,
+          logoSize: 15,
+          navigationRailRadius: 15,
+          railIconSize: 8,
+          railIconsSizeHeight: 30,
+          railIconsSizeWidth: 30,
+          bottomIconsSize: 25,
+          bottomRailLabel: bottomLabel,
+          navigationRailColor: Colors.white,
+          railLabel: railLabel,
+          bottomItemCount: bottomLabel.length,
+         // bottomIcons: bottomIcons,
+          activeColor: activeColor,
+          inActiveColor: inactiveColor,
+          onBottomIndexSelected: (int index) {},
+          onNavigationRailIndexSelected: (int value) {}, logoutIcon: 'assets/logout.png',
+        ),
       ),
     );
   }
 }
-
-
-

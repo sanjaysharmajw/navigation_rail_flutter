@@ -1,6 +1,6 @@
 name: navigation_rail_flutter
 description: "NavigationRail in Flutter provides a responsive, side navigation bar for large screens, enhancing usability and adaptive UI design."
-version: 0.0.3
+version: 0.0.5
 homepage: https://github.com/sanjaysharmajw/navigation_rail_flutter.git
 
 environment:
