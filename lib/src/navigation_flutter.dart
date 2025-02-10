@@ -115,7 +115,7 @@ class _NavigationFlutterState extends State<NavigationFlutter> {
                   padding: const EdgeInsets.all(5.0),
                   child: Column(
                     children: [
-                      const SizedBox(height: 15),
+                      const SizedBox(height: 5),
                       Image.asset(companyLog!,scale: logoSize),
                       Expanded(
                         child: ListView.builder(
