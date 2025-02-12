@@ -56,19 +56,7 @@ class _NavigationRailExampleState extends State<NavigationRailExample> {
 
   final List<Widget> pages = [
     const Center(child: Text('Home', style: TextStyle(fontSize: 20))),
-    Center(child: SizedBox(
-      width: 100,
-      height: 100,
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(50), // Half of the width/height for a perfect circle
-        child: Image.network(
-          networkImage,
-          fit: BoxFit.cover, // Ensure image covers the space without distortion
-        ),
-      ),
-    )
-
-    ),
+    const Center(child: Text('List', style: TextStyle(fontSize: 20))),
   ];
 
   @override
@@ -97,7 +85,7 @@ class _NavigationRailExampleState extends State<NavigationRailExample> {
           activeColor: activeColor,
           inActiveColor: inactiveColor,
           onBottomIndexSelected: (int index) {},
-          onNavigationRailIndexSelected: (int value) {}, logoutIcon: 'assets/logout.png',
+          onNavigationRailIndexSelected: (int value) {}, logoutIcon: 'assets/logout.png', profileClick: () {  }, logoutClick: () {  },
         ),
       ),
     );

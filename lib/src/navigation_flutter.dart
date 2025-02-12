@@ -32,6 +32,7 @@ class NavigationFlutter extends StatefulWidget {
   final Color? background;
   final ValueChanged<int> onBottomIndexSelected;
   final ValueChanged<int> onNavigationRailIndexSelected;
+  final VoidCallback profileClick,logoutClick;
 
 
   final double? railIconsSizeHeight,railIconsSizeWidth;
@@ -58,7 +59,7 @@ class NavigationFlutter extends StatefulWidget {
     this.railIconsSizeWidth=30, this.railIconSize=6, this.logoSize=10,
     this.railBottomSizeHeight, this.railBottomSizeWidth,
     this.bottomIconsSize=18, required this.onBottomIndexSelected,
-    required this.onNavigationRailIndexSelected, this.background=color, required this.logoutIcon, this.profileImage});
+    required this.onNavigationRailIndexSelected, this.background=color, required this.logoutIcon, this.profileImage, required this.profileClick, required this.logoutClick});
 
   @override
   State<NavigationFlutter> createState() => _NavigationFlutterState();
@@ -212,19 +213,22 @@ class _NavigationFlutterState extends State<NavigationFlutter> {
                           ),
 
                           const SizedBox(height: 5),
-                          SizedBox(
-                            width: 30,
-                            height: 30,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(50),
-                              child: profileImage != null && Uri.tryParse(profileImage!)?.hasAbsolutePath == true
-                                  ? Image.network(
-                                profileImage!,
-                                fit: BoxFit.cover,
-                              )
-                                  : Image.asset(
-                                profileImage!, // Path to your local default image
-                                fit: BoxFit.cover,
+                          InkWell(
+                            onTap: widget.profileClick,
+                            child: SizedBox(
+                              width: 30,
+                              height: 30,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(50),
+                                child: profileImage != null && Uri.tryParse(profileImage!)?.hasAbsolutePath == true
+                                    ? Image.network(
+                                  profileImage!,
+                                  fit: BoxFit.cover,
+                                )
+                                    : Image.asset(
+                                  profileImage!, // Path to your local default image
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
                           ),
@@ -236,9 +240,12 @@ class _NavigationFlutterState extends State<NavigationFlutter> {
                               endIndent: 15,
                               thickness: 2),
                           const SizedBox(height: 5),
-                          Image.asset(
-                            scale: bottomIconsSize,
-                              logoutIcon
+                          InkWell(
+                            onTap: widget.logoutClick,
+                            child: Image.asset(
+                              scale: bottomIconsSize,
+                                logoutIcon
+                            ),
                           ),
                           const SizedBox(height: 20),
                         ],
