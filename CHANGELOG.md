@@ -1,12 +1,4 @@
-## 0.0.1
+## 0.0.8
 
-* New Package released.
-
-## 0.0.2
-
-* Bug Fixed
-
-## 0.0.6
-
-* ui improved
+* Click event fixed
 

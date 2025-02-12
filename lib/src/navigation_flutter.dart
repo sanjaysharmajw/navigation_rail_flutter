@@ -211,7 +211,6 @@ class _NavigationFlutterState extends State<NavigationFlutter> {
                               );
                             },
                           ),
-
                           const SizedBox(height: 5),
                           InkWell(
                             onTap: widget.profileClick,
@@ -232,7 +231,6 @@ class _NavigationFlutterState extends State<NavigationFlutter> {
                               ),
                             ),
                           ),
-
                           const SizedBox(height: 15),
                           Divider(
                               color: Colors.grey.shade300,
