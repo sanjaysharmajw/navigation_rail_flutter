@@ -60,8 +60,23 @@ A Navigation Rail is useful for providing a clear, space-efficient way to naviga
 
 - ```logoutIcon```: 'assets/logout.png' → The asset path for the logout icon image.
 
-### Document
+## Document
 
+The ```navigation_rail_flutter``` package you've mentioned doesn't appear in the official Flutter or Dart package repositories. It's possible that it might be a custom or less-known package. However, Flutter provides a built-in widget called ```NavigationRail``` that offers similar functionality.
+
+### NavigationRail Widget:
+
+The ```NavigationRail``` widget is part of Flutter's material library and is designed for applications with wider viewports, such as desktop or tablet layouts. It provides a side navigation component that allows users to navigate between different sections of the app.
+
+### Key Properties:
+
+```backgroundColor```: Sets the color of the container that holds all of the ```NavigationRail```'s contents.
+
+```selectedIndex```: The index into destinations for the current selected NavigationRailDestination.
+
+```onDestinationSelected```: Called when one of the destinations is selected.
+
+```destinations```: A list of ```NavigationRailDestination``` widgets representing the items in the rail.
 ```dart 
 
   final List<String> bottomLabel = <String>['Profile', 'Logout'];
