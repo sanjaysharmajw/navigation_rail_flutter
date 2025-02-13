@@ -5,8 +5,8 @@
 - [Main Navigation Properties](#main-navigation-properties)
 - [Padding and Sizing](#padding-and-sizing)
 - [Bottom Navigation Properties](#bottom-navigation-properties)
-- [Styling & Colors](#styling-&-colors)
-- [Callbacks & Actions](#callbacks-&-actions)
+- [Styling and Colors](#styling-and-colors)
+- [Callbacks and Actions](#callbacks-and-actions)
 
 ## Navigation Rail Flutter
 
@@ -46,12 +46,12 @@ A Navigation Rail is useful for providing a clear, space-efficient way to naviga
 - ```bottomRailLabel```: bottomLabel → A list of labels for the bottom navigation bar.
 - ```bottomItemCount```: bottomLabel.length → Defines the number of items in the bottom navigation based on bottomLabel list length.
 - ```bottomIcons``` (commented out) → Would likely contain a list of icons for the bottom navigation bar.
-### Styling & Colors
+### Styling and Colors
 
 - ```navigationRailColor```: Colors.white → Sets the background color of the navigation rail.
 - ```activeColor```: activeColor → Defines the color for active (selected) navigation items.
 - ```inActiveColor```: inactiveColor → Defines the color for inactive (unselected) navigation items.
-### Callbacks & Actions
+### Callbacks and Actions
 
 - ```onBottomIndexSelected```: (int index) {} → Callback function triggered when a bottom navigation item is selected, with index representing the selected item's position.
 - ```onNavigationRailIndexSelected```: (int value) {} → Callback function triggered when a rail navigation item is selected, with value representing the selected item's position.
