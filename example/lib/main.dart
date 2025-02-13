@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:navigation_rail_flutter/navigation_rail_flutter.dart';
+
 const logo = "assets/logo.png";
-const networkImage = "https://images.pexels.com/photos/27305813/pexels-photo-27305813/free-photo-of-a-woman-taking-a-photo-with-her-camera.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
+const networkImage =
+    "https://images.pexels.com/photos/27305813/pexels-photo-27305813/free-photo-of-a-woman-taking-a-photo-with-her-camera.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
 const profile = "assets/settings.png";
 const activeHouse = "assets/active_house.png";
 const activeList = "assets/active_list.png";
@@ -43,8 +45,6 @@ class NavigationRailExample extends StatefulWidget {
 }
 
 class _NavigationRailExampleState extends State<NavigationRailExample> {
-
-
   final List<String> bottomLabel = <String>['Profile', 'Logout'];
   final List<String> bottomIcons = <String>[profile, 'assets/logout.png'];
 
@@ -78,11 +78,14 @@ class _NavigationRailExampleState extends State<NavigationRailExample> {
           navigationRailColor: Colors.white,
           railLabel: railLabel,
           bottomItemCount: bottomLabel.length,
-         // bottomIcons: bottomIcons,
+          // bottomIcons: bottomIcons,
           activeColor: activeColor,
           inActiveColor: inactiveColor,
           onBottomIndexSelected: (int index) {},
-          onNavigationRailIndexSelected: (int value) {}, logoutIcon: 'assets/logout.png', profileClick: () {  }, logoutClick: () {  },
+          onNavigationRailIndexSelected: (int value) {},
+          logoutIcon: 'assets/logout.png',
+          profileClick: () {},
+          logoutClick: () {},
         ),
       ),
     );

@@ -14,14 +14,14 @@ class RailItems extends StatelessWidget {
           height: 30,
           width: 30,
           decoration: BoxDecoration(
-            color:railColor,
+            color: railColor,
             borderRadius: const BorderRadius.all(Radius.circular(5)),
           ),
           child: Padding(
-            padding:  const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             child: Image.asset(
               icons,
-              color:  Colors.grey,
+              color: Colors.grey,
             ),
           ),
         ),
