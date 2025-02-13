@@ -9,7 +9,52 @@ A Navigation Rail is useful for providing a clear, space-efficient way to naviga
 
 
 
-## Document
+### Main Navigation Properties
+
+- ```railItemCount:``` railLabel.length → Sets the number of items in the navigation rail based on the railLabel list length.
+
+- ```railIcons```: railIcons → A list of icons for the navigation rail.
+
+- ```pages```: pages → A list of widgets representing different pages/screens in the app.
+
+- ```logo```: logo → The app's logo, typically a widget or image.
+
+- ```profileImage```: networkImage → The profile image, fetched from a network or a local asset.
+### Padding and Sizing
+
+- ```navigationRailPadding```: 10 → Adds padding around the navigation rail.
+
+- ```logoSize```: 15 → Defines the size of the logo in the navigation bar.
+
+- ```navigationRailRadius```: 15 → Sets the border radius for the navigation rail for rounded corners.
+
+- ```railIconSize```: 8 → The size of the icons in the navigation rail.
+
+- ```railIconsSizeHeight```: 30 → Height of individual rail icons.
+
+- ```railIconsSizeWidth```: 30 → Width of individual rail icons.
+
+- ```bottomIconsSize```: 25 → Size of icons in the bottom navigation bar.
+### Bottom Navigation Properties
+
+- ```bottomRailLabel```: bottomLabel → A list of labels for the bottom navigation bar.
+- ```bottomItemCount```: bottomLabel.length → Defines the number of items in the bottom navigation based on bottomLabel list length.
+- ```bottomIcons``` (commented out) → Would likely contain a list of icons for the bottom navigation bar.
+### Styling & Colors
+
+- ```navigationRailColor```: Colors.white → Sets the background color of the navigation rail.
+- ```activeColor```: activeColor → Defines the color for active (selected) navigation items.
+- ```inActiveColor```: inactiveColor → Defines the color for inactive (unselected) navigation items.
+### Callbacks & Actions
+
+- ```onBottomIndexSelected```: (int index) {} → Callback function triggered when a bottom navigation item is selected, with index representing the selected item's position.
+- ```onNavigationRailIndexSelected```: (int value) {} → Callback function triggered when a rail navigation item is selected, with value representing the selected item's position.
+- ```profileClick```: () {} → Callback function triggered when the profile icon is clicked.
+- ```logoutClick```: () {} → Callback function triggered when the logout icon is clicked.
+
+- ```logoutIcon```: 'assets/logout.png' → The asset path for the logout icon image.
+
+### Document
 
 ```dart 
 
@@ -59,26 +104,26 @@ A Navigation Rail is useful for providing a clear, space-efficient way to naviga
 ```
 
 
-## Authors
+### Authors
 * [@sanjaysharmajw](https://github.com/sanjaysharmajw)
 
 
-## About Me
+### About Me
 I'm a full stack developer. Cross-Platform Mobile Developer: Android, iOS, Swift , and Flutter Expert
 
 
-## License
+### License
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/sanjaysharmajw/navigation_rail_flutter/blob/main/LICENSE)
 
 
-## Support
+### Support
 I hope you had a great experience using this package! If you found the Extensions Pro helpful, consider supporting me by buying a coffee—your generosity would mean a lot and is deeply appreciated!
 
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/sanjaysharmajw)
 
 
 
-## Skills
+### Skills
 Android, iOS, Java, Kotlin, JetPack Compose, SwiftUI, Flutter, Dart, JavaScript, Node.js...
 
