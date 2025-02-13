@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 class RailItems extends StatelessWidget {
@@ -20,7 +18,7 @@ class RailItems extends StatelessWidget {
             borderRadius: const BorderRadius.all(Radius.circular(5)),
           ),
           child: Padding(
-            padding:  EdgeInsets.all(10!),
+            padding:  const EdgeInsets.all(10),
             child: Image.asset(
               icons,
               color:  Colors.grey,

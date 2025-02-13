@@ -2,6 +2,12 @@
 ![Logo](https://github.com/sanjaysharmajw/navigation_rail_flutter/blob/main/screenshots/rail.png?raw=true)
 
 
+- [Main Navigation Properties](#main-navigation-properties)
+- [Padding and Sizing](#padding-and-sizing)
+- [Bottom Navigation Properties](#bottom-navigation-properties)
+- [Styling & Colors](#styling-&-colors)
+- [Callbacks & Actions](#callbacks-&-actions)
+
 ## Navigation Rail Flutter
 
 A Navigation Rail is useful for providing a clear, space-efficient way to navigate between different sections of an app. It enhances usability on larger screens, such as tablets or desktop apps, by offering a consistent and easily accessible navigation bar that minimizes screen clutter while maximizing available space.

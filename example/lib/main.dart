@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:navigation_rail_flutter/navigation_rail_flutter.dart';
-
 const logo = "assets/logo.png";
 const networkImage = "https://images.pexels.com/photos/27305813/pexels-photo-27305813/free-photo-of-a-woman-taking-a-photo-with-her-camera.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2";
-
 const profile = "assets/settings.png";
-//const signOut = "assets/signout.png";
 const activeHouse = "assets/active_house.png";
 const activeList = "assets/active_list.png";
 

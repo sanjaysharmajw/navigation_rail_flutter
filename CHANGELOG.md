@@ -2,3 +2,11 @@
 
 * Click event fixed
 
+## 0.0.9
+
+* Update ReadMe and Document
+
+## 0.0.10
+
+* Update ReadMe and Document
+
