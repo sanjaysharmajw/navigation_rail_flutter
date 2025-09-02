@@ -4,7 +4,11 @@
 | ![Publisher](https://img.shields.io/pub/publisher/navigation_rail_flutter) | ![Points](https://img.shields.io/pub/points/navigation_rail_flutter) | ![Version](https://img.shields.io/pub/v/navigation_rail_flutter) |
 |:------------------------------------------------------------:|:-----------------------------------------------------:|:--------------------------------------------------:|
 
+
+
 A customizable and elegant navigation rail widget for Flutter applications that provides a sidebar navigation experience with support for both main navigation items and bottom action items.
+
+
 
 ## Features
 
@@ -23,7 +27,7 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  navigation_rail_flutter: ^1.0.2
+  navigation_rail_flutter: ^1.0.3
 ```
 
 Then run:
@@ -228,11 +232,11 @@ The widget automatically detects whether the provided string is a URL or asset p
 
 ## Best Practices
 
-- **Icon Consistency**: Use icons with consistent styling and size for better visual harmony
-- **Color Contrast**: Ensure sufficient contrast between active/inactive states for accessibility
-- **Asset Optimization**: Optimize your image assets for better performance
-- **Responsive Design**: Test the navigation rail on different screen sizes
-- **Error Handling**: Implement proper error handling in your callback functions
+1. **Icon Consistency**: Use icons with consistent styling and size for better visual harmony
+2. **Color Contrast**: Ensure sufficient contrast between active/inactive states for accessibility
+3. **Asset Optimization**: Optimize your image assets for better performance
+4. **Responsive Design**: Test the navigation rail on different screen sizes
+5. **Error Handling**: Implement proper error handling in your callback functions
 
 ## Contributing
 
@@ -241,6 +245,181 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+## API Documentation
+
+### Class: NavigationFlutter
+
+A stateful widget that creates a customizable navigation rail with main navigation items and optional bottom action items.
+
+#### Constructor: NavigationFlutter.new
+
+```dart
+NavigationFlutter({
+  Key? key,
+  double? navigationRailPadding = 4,
+  double? navigationRailWidth = 65,
+  double? navigationRailRadius = 5,
+  List<String>? railLabel,
+  List<String>? bottomRailLabel,
+  List<String>? bottomIcons,
+  required List<String> railIcons,
+  required int railItemCount,
+  int? bottomItemCount,
+  required List<Widget> pages,
+  required Color activeColor,
+  required Color inActiveColor,
+  Color? navigationRailColor = Colors.blueGrey,
+  String? logo,
+  required String logoutIcon,
+  String? profileImage,
+  bool? bottomLabelActive = false,
+  bool? railLabelActive = false,
+  double? railIconSize = 6,
+  double? logoSize = 10,
+  double? bottomIconsSize = 18,
+  Color? background = const Color(0xFFEDF6F7),
+  required ValueChanged<int> onBottomIndexSelected,
+  required ValueChanged<int> onNavigationRailIndexSelected,
+  required VoidCallback profileClick,
+  required VoidCallback logoutClick,
+  double? railIconsSizeHeight = 30,
+  double? railIconsSizeWidth = 30,
+  double? railBottomSizeHeight,
+  double? railBottomSizeWidth,
+})
+```
+
+Creates a NavigationFlutter widget with the specified configuration.
+
+**Parameters:**
+- `key`: An optional key to use for this widget
+- All other parameters are documented in the Parameters section above
+
+#### Properties
+
+##### activeColor → Color
+The background color used for the currently selected navigation rail item. This color is applied to the container background of the active navigation item to provide visual feedback to the user about their current selection.
+
+**Example:**
+```dart
+NavigationFlutter(
+  activeColor: Colors.blue, // Active item will have blue background
+  // ... other parameters
+)
+```
+
+##### background → Color?
+The background color of the entire NavigationFlutter widget. This sets the overall background color of the scaffold body where the navigation rail is displayed.
+
+**Default Value:** `Color(0xFFEDF6F7)` (light blue-gray)
+
+**Example:**
+```dart
+NavigationFlutter(
+  background: Colors.white, // Sets white background
+  // ... other parameters
+)
+```
+
+##### inActiveColor → Color
+The background color used for non-selected navigation rail items. This provides visual contrast between active and inactive navigation items.
+
+**Example:**
+```dart
+NavigationFlutter(
+  activeColor: Colors.blue,
+  inActiveColor: Colors.grey[300]!, // Inactive items have light gray background
+  // ... other parameters
+)
+```
+
+##### railIcons → List<String>
+A list of asset paths for the navigation rail icons. Each string should be a valid asset path that corresponds to an image file in your Flutter project's assets directory.
+
+**Example:**
+```dart
+NavigationFlutter(
+  railIcons: [
+    'assets/icons/home.png',
+    'assets/icons/search.png',
+    'assets/icons/profile.png',
+  ],
+  // ... other parameters
+)
+```
+
+##### pages → List<Widget>
+A list of widgets that represent the different pages/screens to display when navigation items are selected. The index of the selected navigation item corresponds to the index in this list.
+
+**Example:**
+```dart
+NavigationFlutter(
+  pages: [
+    HomeScreen(),
+    SearchScreen(), 
+    ProfileScreen(),
+  ],
+  // ... other parameters
+)
+```
+
+##### railItemCount → int
+The number of main navigation items to display in the rail. This should match the length of the `railIcons` and `pages` lists.
+
+##### onNavigationRailIndexSelected → ValueChanged<int>
+A callback function that is called when a navigation rail item is selected. The function receives the index of the selected item.
+
+**Example:**
+```dart
+NavigationFlutter(
+  onNavigationRailIndexSelected: (int index) {
+    print('Selected navigation item: $index');
+    // Handle navigation logic here
+  },
+  // ... other parameters
+)
+```
+
+##### onBottomIndexSelected → ValueChanged<int>
+A callback function that is called when a bottom navigation item is selected. The function receives the index of the selected bottom item.
+
+**Example:**
+```dart
+NavigationFlutter(
+  onBottomIndexSelected: (int index) {
+    if (index == 0) {
+      // Handle profile action
+    } else if (index == 1) {
+      // Handle settings action  
+    }
+  },
+  // ... other parameters
+)
+```
+
+## Symbol Reference
+
+### navigation_rail_flutter
+The main library that exports the NavigationFlutter widget and related components.
+
+### navigation_rail_flutter.NavigationFlutter
+The primary widget class that creates a customizable navigation rail interface.
+
+### navigation_rail_flutter.NavigationFlutter.NavigationFlutter.new
+The default constructor for creating a NavigationFlutter widget instance.
+
+### navigation_rail_flutter.NavigationFlutter.activeColor
+Property that defines the background color for the currently selected navigation item.
+
+### navigation_rail_flutter.NavigationFlutter.background
+Property that defines the overall background color of the navigation rail widget.
+
+## Migration Guide
+
+### From version 0.x to 1.x
+- No breaking changes in the current version
+- All existing parameters remain compatible
 
 ## Support
 
